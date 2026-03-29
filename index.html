@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HARSH BHAGAT</title>
 
-<!-- FONT AWESOME -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-<!-- META PIXEL -->
+<!-- META PIXEL (UNCHANGED) -->
 <script>
 !function(f,b,e,v,n,t,s){
 if(f.fbq)return;
@@ -36,105 +36,156 @@ src="https://www.facebook.com/tr?id=2441088633000571&ev=PageView&noscript=1"/>
 
 body{
   font-family:'Poppins',sans-serif;
-  background:#000;
+  background: radial-gradient(circle at top,#0f2027,#000000);
   color:#fff;
-  text-align:center;
+}
+
+/* GLOW BG */
+body::before{
+  content:"";
+  position:fixed;
+  width:600px;
+  height:600px;
+  background:radial-gradient(circle,#00c6ff,transparent);
+  top:-200px;
+  left:-200px;
+  filter:blur(120px);
+  z-index:-1;
 }
 
 /* HERO */
 .hero{
-  padding:40px 20px 30px;
+  text-align:center;
+  padding:60px 20px 30px;
 }
 
 /* LOGO */
 .hero img{
-  width:130px;
-  height:130px;
+  width:140px;
+  height:140px;
   border-radius:50%;
-  object-fit:cover;
   border:3px solid rgba(255,255,255,0.2);
-  box-shadow:
-    0 0 20px rgba(255,215,0,0.8),
-    0 0 40px rgba(0,198,255,0.4);
-  margin-bottom:16px;
+  box-shadow:0 0 30px #00c6ff,0 0 60px #ff00ff;
+  margin-bottom:20px;
 }
-  
+
 /* NAME */
 .trader-name{
-   font-size: 30px;
-        margin-top: 25px;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 900;
-        animation: fadeDown 1.4s ease-in-out;
-    }
- 
+  font-size:34px;
+  font-weight:900;
+  background:linear-gradient(90deg,#00c6ff,#ff00ff,#00ff88);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
 /* CTA */
 .cta{
   display:inline-block;
-  width:100%;
-  max-width:360px;
-  padding:16px;
-  margin:0 auto 22px;
-  font-size:17px;
-  font-weight:800;
+  margin-top:25px;
+  padding:16px 30px;
   border-radius:50px;
-  background:linear-gradient(90deg,#ff0080,#8e2de2,#00c6ff);
-  color:#fff;
+  font-weight:700;
   text-decoration:none;
-  box-shadow:0 10px 30px rgba(0,0,0,.7);
-  transition:.2s ease;
+  color:#fff;
+  background:linear-gradient(90deg,#ff0080,#00c6ff);
+  box-shadow:0 0 25px rgba(0,198,255,0.8);
+  transition:0.3s;
 }
 .cta:hover{
-  transform:scale(1.03);
-  box-shadow:0 0 30px rgba(0,198,255,.9);
+  transform:scale(1.05);
+  box-shadow:0 0 40px rgba(255,0,128,0.9);
 }
 
-/* TITLE */
-.hero h1{
-  font-size:30px;
-  font-weight:800;
-  margin-bottom:8px;
-}
-
+/* TAGLINE */
 .hero p{
-  font-size:15px;
-  color:#ccc;
+  margin-top:12px;
+  color:#aaa;
 }
 
-/* INFO */
+/* CARD SECTION */
 .info{
-  padding:28px 20px;
+  padding:40px 20px;
 }
 
 .card{
-  background:linear-gradient(180deg,#0f1629,#05070d);
-  border-radius:22px;
-  padding:22px;
-  box-shadow:0 0 30px rgba(0,255,255,.12);
+  max-width:700px;
+  margin:auto;
+  background:rgba(255,255,255,0.05);
+  border-radius:20px;
+  backdrop-filter:blur(15px);
+  padding:30px;
+  box-shadow:0 0 40px rgba(0,255,255,0.1);
 }
 
 .point{
   display:flex;
-  gap:14px;
+  gap:15px;
+  margin:18px 0;
   align-items:center;
-  margin:14px 0;
+  font-size:16px;
 }
 
 .point i{
-  font-size:18px;
-  color:#00c6ff;
+  font-size:22px;
+  min-width:30px;
 }
 
-.point span{
-  font-size:15px;
+/* ICON COLORS */
+.icon-chart{color:#00c6ff;}
+.icon-target{color:#00ff88;}
+.icon-shield{color:#ffaa00;}
+.icon-fire{color:#ff3b3b;}
+
+/* DETAILS */
+.details-section{
+  padding:60px 20px;
+  text-align:center;
+}
+
+.details-grid{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-top:30px;
+}
+
+.details-card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  padding:25px;
+  margin:15px;
+  width:260px;
+  border-radius:20px;
+  backdrop-filter:blur(10px);
+  transition:0.3s;
+}
+.details-card:hover{
+  transform:translateY(-10px) scale(1.05);
+  box-shadow:0 0 30px #00c6ff;
+}
+
+.details-card i{
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+/* BENEFITS */
+.benefits{
+  margin-top:40px;
+  max-width:700px;
+  margin:auto;
   text-align:left;
+}
+
+.benefits li{
+  margin:12px 0;
 }
 
 /* FOOTER */
 .footer{
-  padding:20px 10px;
-  font-size:13px;
-  color:#aaa;
+  text-align:center;
+  padding:30px;
+  color:#777;
 }
 </style>
 </head>
@@ -143,70 +194,103 @@ body{
 
 <section class="hero">
 
-  <img src="https://uploads.onecompiler.io/446vwj75z/44hkvfnrs/Screenshot%202026-03-27%20223923.png"
-       alt="INDIAN TRADER Logo">
-  <div class="trader-name">
-    🤴𝗛𝗔𝗥𝗦𝗛 𝗕𝗛𝗔𝗚𝗔𝗧🤴
-  </div>
-                                                                                                                                                                                                                                                                                                 
+<img src="https://uploads.onecompiler.io/446vwj75z/44hkvfnrs/Screenshot%202026-03-27%20223923.png">
 
-  <!-- TELEGRAM JOIN BUTTON -->
-  <a href="https://t.me/+WUBV_7WcZhpkNTNl"
-     target="_blank"
-     class="cta subscribe-btn">
-    <i class="fab fa-telegram-plane"></i> 𝐉𝐎𝐈𝐍 𝐎𝐔𝐑 𝐓𝐄𝐋𝐄𝐆𝐑𝐀𝐌
-  </a>
+<div class="trader-name">👑 HARSH BHAGAT 👑</div>
 
-  <h1></h1>
-  <p>Free Signals • Daily Analysis • Smart Risk Management</p>
+<a href="https://t.me/+WUBV_7WcZhpkNTNl"
+target="_blank"
+class="cta subscribe-btn">
+<i class="fab fa-telegram-plane"></i> JOIN TELEGRAM
+</a>
+
+<p>Free Signals • Daily Analysis • Smart Risk Management</p>
 
 </section>
 
 <section class="info">
-  <div class="card">
+<div class="card">
 
-    <div class="point">
-      <i class="fa-solid fa-chart-line"></i>
-      <span>Intraday, Options, NIFTY & BANKNIFTY Calls</span>
-    </div>
+<div class="point">
+<i class="fa-solid fa-chart-line icon-chart"></i>
+Intraday, Options, NIFTY & BANKNIFTY Calls
+</div>
 
-    <div class="point">
-      <i class="fa-solid fa-bullseye"></i>
-      <span>Accurate Entry, Exit & Target Levels</span>
-    </div>
+<div class="point">
+<i class="fa-solid fa-crosshairs icon-target"></i>
+Accurate Entry, Exit & Target Levels
+</div>
 
-    <div class="point">
-      <i class="fa-solid fa-shield"></i>
-      <span>Risk Management Focused Strategy</span>
-    </div>
+<div class="point">
+<i class="fa-solid fa-shield-halved icon-shield"></i>
+Risk Management Focused Strategy
+</div>
 
-    <div class="point">
-      <i class="fa-solid fa-fire"></i>
-      <span>Daily Free & Premium Market Analysis</span>
-    </div>
+<div class="point">
+<i class="fa-solid fa-bolt icon-fire"></i>
+Daily Free & Premium Market Analysis
+</div>
 
-  </div>
+</div>
+</section>
+
+<section class="details-section">
+
+<h1>🔥 Premium Trading Details</h1>
+
+<div class="details-grid">
+
+<div class="details-card">
+<i class="fa-solid fa-chart-simple icon-chart"></i>
+<h3>Intraday Signals</h3>
+<p>Daily high-quality stock & index calls with proper levels.</p>
+</div>
+
+<div class="details-card">
+<i class="fa-solid fa-money-bill-trend-up icon-target"></i>
+<h3>Options Trading</h3>
+<p>BankNifty & Nifty strategies with clear entry/exit.</p>
+</div>
+
+<div class="details-card">
+<i class="fa-solid fa-bullseye icon-target"></i>
+<h3>Accuracy Strategy</h3>
+<p>Strategy-focused trades with risk management.</p>
+</div>
+
+<div class="details-card">
+<i class="fa-solid fa-graduation-cap icon-chart"></i>
+<h3>Learning Support</h3>
+<p>Understand market while earning consistently.</p>
+</div>
+
+</div>
+
+<ul class="benefits">
+<li>✔ 2–5 Premium Calls Daily</li>
+<li>✔ Proper Stop Loss & Target</li>
+<li>✔ Live Market Updates</li>
+<li>✔ Risk Management Guidance</li>
+<li>✔ Beginner Friendly + Pro Strategy</li>
+</ul>
+
 </section>
 
 <div class="footer">
-  © 2026 HARSH BHAGAT • All Rights Reserved
+© 2026 HARSH BHAGAT
 </div>
 
-<!-- TRACKING SCRIPT -->
+<!-- TRACKING SCRIPT (UNCHANGED) -->
 <script>
 const PAGEVIEW_KEY = "gt_pageview_tracked";
 const SUBSCRIBE_KEY = "gt_subscribe_tracked";
 
-/* PAGE VIEW - ONLY ONCE */
 if (!localStorage.getItem(PAGEVIEW_KEY)) {
     fbq('track', 'PageView');
     localStorage.setItem(PAGEVIEW_KEY, "true");
-    console.log("✅ PageView tracked");
 }
 
-/* TELEGRAM JOIN - ONLY ONCE */
 document.querySelector(".subscribe-btn").addEventListener("click", function () {
-
     if (!localStorage.getItem(SUBSCRIBE_KEY)) {
 
         fbq('track', 'Lead');
@@ -216,125 +300,9 @@ document.querySelector(".subscribe-btn").addEventListener("click", function () {
         });
 
         localStorage.setItem(SUBSCRIBE_KEY, "true");
-        console.log("✅ Subscribe tracked");
     }
 });
 </script>
 
 </body>
 </html>
-
-<!-- ===== DETAILS SECTION START (NO PRICING) ===== -->
-
-<style>
-.details-section{
-    padding:60px 20px;
-    background: linear-gradient(135deg,#00c6ff,#0072ff,#ff6a00);
-    color:#fff;
-    text-align:center;
-}
-
-/* FEATURES */
-.details-grid{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    margin-top:30px;
-}
-
-.details-card{
-    background:rgba(255,255,255,0.12);
-    margin:15px;
-    padding:25px;
-    width:260px;
-    border-radius:18px;
-    backdrop-filter:blur(12px);
-    transition:0.3s;
-}
-
-.details-card:hover{
-    transform:translateY(-8px) scale(1.03);
-}
-
-.details-card h3{
-    margin-bottom:10px;
-}
-
-/* BENEFITS */
-.benefits{
-    margin-top:50px;
-    max-width:700px;
-    margin-left:auto;
-    margin-right:auto;
-    text-align:left;
-}
-
-.benefits li{
-    margin:12px 0;
-    font-size:16px;
-}
-
-/* TRUST */
-.trust{
-    margin-top:50px;
-    font-size:15px;
-    opacity:0.9;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-    .details-card{
-        width:90%;
-    }
-}
-</style>
-
-<section class="details-section">
-
-    <h1>🔥 Premium Trading Details</h1>
-    <p>Professional Trading Signals + Strategy + Risk Management</p>
-
-    <!-- FEATURES -->
-    <div class="details-grid">
-
-        <div class="details-card">
-            <h3>📊 Intraday Signals</h3>
-            <p>Daily high-quality stock & index calls with proper levels.</p>
-        </div>
-
-        <div class="details-card">
-            <h3>💰 Options Trading</h3>
-            <p>BankNifty & Nifty strategies with clear entry/exit.</p>
-        </div>
-
-        <div class="details-card">
-            <h3>🎯 Accuracy Based</h3>
-            <p>Strategy-focused trades with risk management.</p>
-        </div>
-
-        <div class="details-card">
-            <h3>📚 Learning Support</h3>
-            <p>Understand market while earning consistently.</p>
-        </div>
-
-    </div>
-
-    <!-- BENEFITS -->
-    <ul class="benefits">
-        <li>✔ 2–5 Premium Calls Daily</li>
-        <li>✔ Proper Stop Loss & Target</li>
-        <li>✔ Live Market Updates</li>
-        <li>✔ Risk Management Guidance</li>
-        <li>✔ Beginner Friendly + Pro Level Strategy</li>
-    </ul>
-
-    <!-- TRUST -->
-    <div class="trust">
-        <p>⚠️ Disclaimer: Stock market investments are subject to market risks. No guaranteed profits.</p>
-        <p>✔ Focus on strategy, discipline & consistency</p>
-    </div>
-
-</section>
-
-<!-- ===== DETAILS SECTION END ===== -->
-```
